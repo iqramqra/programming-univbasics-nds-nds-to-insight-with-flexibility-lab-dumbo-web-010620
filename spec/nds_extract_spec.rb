@@ -17,7 +17,7 @@ describe 'provided method' do
         :title => "The Fire Hydrant of Doom"
       }
       new_movie = movie_with_director_name(director_name, movies_coll)
-
+      print(new_movie)
       expect(new_movie[:director_name]).to eq(director_name)
     end
   end

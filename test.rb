@@ -1,6 +1,6 @@
 # Provided, don't edit
 require 'directors_database'
-
+require 'pp'
 # A method we're giving you. This "flattens"  Arrays of Arrays so: [[1,2],
 # [3,4,5], [6]] => [1,2,3,4,5,6].
 
@@ -34,6 +34,7 @@ end
 # Your code after this point
 
 def movies_with_director_key(name, movies_collection)
+  movies_collection
   # GOAL: For each Hash in an Array (movies_collection), provide a collection
   # of movies and a directors name to the movie_with_director_name method
   # and accumulate the returned Array of movies into a new Array that's
@@ -48,15 +49,6 @@ def movies_with_director_key(name, movies_collection)
   # Array of Hashes where each Hash represents a movie; however, they should all have a
   # :director_name key. This addition can be done by using the provided
   # movie_with_director_name method
-  
-  collection = []
-  i=0
-  while i<movies_collection.length do
-    movie_data=movies_collection[i]
-    collection << movie_with_director_name(name, movie_data)
-    i+=1
-  end
-  collection
 end
 
 
@@ -96,3 +88,4 @@ def studios_totals(nds)
   movies_with_director_names = flatten_a_o_a(a_o_a_movies_with_director_names)
   return gross_per_studio(movies_with_director_names)
 end
+pp (directors_database)
